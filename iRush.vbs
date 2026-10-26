@@ -3,6 +3,11 @@ scriptDir = FSO.GetParentFolderName(WScript.ScriptFullName)
 Set WshShell = CreateObject("WScript.Shell")
 WshShell.CurrentDirectory = scriptDir
 
+' If node_modules is missing, run npm install first
+If Not FSO.FolderExists(scriptDir & "\node_modules") Then
+    WshShell.Run "cmd.exe /c title iRush Setup && echo ================================================== && echo   iRush First-Time Setup: Installing components... && echo   Please wait a moment... && echo ================================================== && npm install --omit=dev && echo Setup complete! Launching iRush... && timeout /t 2 >nul", 1, True
+End If
+
 ' 1. Start Node server completely hidden (0 = hide window)
 WshShell.Run "cmd.exe /c node server.js >nul 2>&1", 0, False
 

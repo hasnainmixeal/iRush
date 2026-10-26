@@ -68,28 +68,14 @@ On iOS, files are safely placed into your device's storage:
 
 ## Quick Start (Running iRush)
 
-1. Clone or download this repository:
-   ```bash
-   git clone https://github.com/hasnainmixeal/iRush.git
-   cd iRush
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Launch iRush:
-   - **One-click Launch**: Double-click `iRush.vbs` (or the Desktop shortcut `iRush.lnk`).
-   - Or start manually via terminal:
-     ```bash
-     npm start
-     ```
-   - Open your browser to `http://127.0.0.1:54321`.
-
-4. Plug your iPhone into your PC via USB cable.
+1. Clone or download this repository (Click **Code ➔ Download ZIP** and extract it).
+2. Double-click **`Start-iRush.bat`** (or **`iRush.vbs`**).
+   - *On the very first launch, it will automatically install required dependencies in a few seconds.*
+3. Plug your iPhone into your PC via USB cable.
    - Unlock your iPhone and tap **"Trust This Computer"** if prompted.
-5. Drag and drop any files into the iRush window to transfer!
+4. Drag and drop any files into the iRush window to transfer!
+
+*(Optional) To place a shortcut on your Desktop, right-click `create-desktop-shortcut.ps1` and select "Run with PowerShell".*
 
 ---
 
