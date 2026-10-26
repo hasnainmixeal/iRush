@@ -80,3 +80,6 @@ On iOS, files are safely placed into your device's storage:
 ## License
 
 MIT License. Free and open source for everyone.
+
+
+Contact me: hassnainaly30@gmail.com
