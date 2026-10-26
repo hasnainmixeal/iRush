@@ -68,14 +68,12 @@ On iOS, files are safely placed into your device's storage:
 
 ## Quick Start (Running iRush)
 
-1. Clone or download this repository (Click **Code ➔ Download ZIP** and extract it).
-2. Double-click **`Start-iRush.bat`** (or **`iRush.vbs`**).
+1. Download or clone this repository (Click **Code ➔ Download ZIP** and extract it).
+2. Double-click **`iRush.exe`**.
    - *On the very first launch, it will automatically install required dependencies in a few seconds.*
 3. Plug your iPhone into your PC via USB cable.
    - Unlock your iPhone and tap **"Trust This Computer"** if prompted.
 4. Drag and drop any files into the iRush window to transfer!
-
-*(Optional) To place a shortcut on your Desktop, right-click `create-desktop-shortcut.ps1` and select "Run with PowerShell".*
 
 ---
 
