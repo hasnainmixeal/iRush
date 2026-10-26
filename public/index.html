@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iRush — High-Speed USB File Transfer</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-window">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="brand">
+        <div class="brand-logo">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1 class="brand-title">iRush</h1>
+          <span class="brand-subtitle">High-Speed Pure USB Transfer</span>
+        </div>
+      </div>
+      <div class="status-pill" id="statusPill">
+        <span class="status-dot" id="statusDot"></span>
+        <span class="status-text" id="statusText">Waiting for iPhone...</span>
+      </div>
+    </header>
+
+    <!-- Main Body -->
+    <main class="main-body">
+      <!-- Drag & Drop Zone -->
+      <div class="dropzone" id="dropzone">
+        <input type="file" id="fileInput" multiple style="display: none;">
+        
+        <div class="dropzone-inner">
+          <div class="upload-icon-circle">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="17 8 12 3 7 8"></polyline>
+              <line x1="12" y1="3" x2="12" y2="15"></line>
+            </svg>
+          </div>
+          <h2 class="dropzone-heading">Drag & drop files here</h2>
+          <p class="dropzone-subheading">Auto-categorized into <strong>Videos</strong>, <strong>Documents</strong>, and <strong>Audio</strong></p>
+          <button type="button" class="btn-browse" id="browseBtn">
+            Browse from Computer
+          </button>
+        </div>
+      </div>
+
+      <!-- Storage Location Display (Right Below Drop Zone) -->
+      <div class="save-location-bar" id="saveLocationBar">
+        <div class="save-location-icon">📁</div>
+        <div class="save-location-text">
+          <span class="save-location-label">iPhone Storage Location:</span>
+          <div class="save-location-path">
+            <span>Files App ➔ On My iPhone ➔</span>
+            <select id="appSelector" class="app-select-dropdown" title="Choose destination container on iPhone">
+              <option value="auto">Chrome</option>
+            </select>
+            <span>➔ <span class="path-highlight">iRush</span></span>
+          </div>
+          <span class="save-location-tip">Files are stored in one permanent <strong>iRush</strong> folder. Tap any file in Files app to open or move anywhere.</span>
+        </div>
+      </div>
+
+      <!-- Active Transfer Progress Card -->
+      <div class="transfer-card" id="transferCard" style="display: none;">
+        <div class="transfer-top">
+          <div class="file-details">
+            <span class="category-badge" id="categoryBadge">Video</span>
+            <span class="transfer-filename" id="transferFileName">File.mkv</span>
+          </div>
+          <div class="speed-badge">
+            <span class="speed-number" id="speedValue">0.0</span>
+            <span class="speed-unit">MB/s</span>
+          </div>
+        </div>
+
+        <div class="progress-track">
+          <div class="progress-fill" id="progressBar" style="width: 0%;"></div>
+        </div>
+
+        <div class="progress-info">
+          <span id="transferredAmount">0 MB / 0 MB</span>
+          <span id="transferETA">Transferring over USB cable...</span>
+          <span class="percent-text" id="percentValue">0%</span>
+        </div>
+      </div>
+
+      <!-- Completed Transfers List -->
+      <div class="history-section" id="historySection" style="display: none;">
+        <div class="history-header">
+          <span class="history-title">Transferred to iPhone</span>
+          <span class="history-count" id="historyCount">0 files</span>
+        </div>
+        <ul class="file-items" id="fileItems"></ul>
+      </div>
+
+      <!-- Bottom Access Files Banner -->
+      <div class="location-banner">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+        </svg>
+        <span>Access on iPhone: <strong>Files App ➔ On My iPhone ➔ <span id="bannerAppName">Chrome</span> ➔ iRush</strong></span>
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

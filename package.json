@@ -1,0 +1,14 @@
+{
+  "name": "irush",
+  "version": "1.0.0",
+  "description": "High-speed USB file transfer tool from Windows PC to iPhone",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "appium-ios-device": "^3.1.24",
+    "busboy": "^1.6.0",
+    "mime-types": "^3.0.2"
+  }
+}
